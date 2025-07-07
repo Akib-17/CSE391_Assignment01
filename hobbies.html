@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Hobbies - Md Akib</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1;
+    }
+
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #fff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+      to {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      opacity: 0.9;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #4a5568;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    nav a:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    nav a:hover::before {
+      opacity: 1;
+    }
+
+    main {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      margin-top: -40px;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      min-height: 70vh;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+    }
+
+    section h2 {
+      color: #2d3748;
+      font-size: 3rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      text-align: center;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 3px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    li {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      padding: 40px;
+      border-radius: 25px;
+      border-left: 6px solid #667eea;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    li:hover::before {
+      opacity: 1;
+    }
+
+    li:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+      border-left-color: #764ba2;
+    }
+
+    li:nth-child(1) {
+      border-left-color: #667eea;
+    }
+
+    li:nth-child(2) {
+      border-left-color: #10b981;
+    }
+
+    li:nth-child(3) {
+      border-left-color: #f59e0b;
+    }
+
+    li:nth-child(4) {
+      border-left-color: #ef4444;
+    }
+
+    li:nth-child(5) {
+      border-left-color: #8b5cf6;
+    }
+
+    li strong {
+      font-size: 1.5rem;
+      color: #2d3748;
+      display: block;
+      margin-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    li strong::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 3px;
+      background: currentColor;
+      border-radius: 2px;
+    }
+
+    li:nth-child(1) strong {
+      color: #667eea;
+    }
+
+    li:nth-child(2) strong {
+      color: #10b981;
+    }
+
+    li:nth-child(3) strong {
+      color: #f59e0b;
+    }
+
+    li:nth-child(4) strong {
+      color: #ef4444;
+    }
+
+    li:nth-child(5) strong {
+      color: #8b5cf6;
+    }
+
+    li p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-top: 15px;
+    }
+
+    /* Hobby Icons */
+    .hobby-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+      text-align: center;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    }
+
+    li:nth-child(1) .hobby-icon::before {
+      content: '💻';
+    }
+
+    li:nth-child(2) .hobby-icon::before {
+      content: '⚽';
+    }
+
+    li:nth-child(3) .hobby-icon::before {
+      content: '🎮';
+    }
+
+    li:nth-child(4) .hobby-icon::before {
+      content: '📸';
+    }
+
+    li:nth-child(5) .hobby-icon::before {
+      content: '🎵';
+    }
+
+    footer {
+      background: linear-gradient(135deg, #2d3748, #1a202c);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 4s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    footer p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      
+      main {
+        padding: 40px 15px;
+      }
+      
+      section {
+        padding: 30px;
+      }
+      
+      section h2 {
+        font-size: 2rem;
+      }
+      
+      ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      li {
+        padding: 30px;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    }
+
+    /* Entry animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    li {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    li:nth-child(1) { animation-delay: 0.1s; }
+    li:nth-child(2) { animation-delay: 0.2s; }
+    li:nth-child(3) { animation-delay: 0.3s; }
+    li:nth-child(4) { animation-delay: 0.4s; }
+    li:nth-child(5) { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Hobbies</h1>
+    <div class="subtitle">Discover what fuels my passion outside of coding</div>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="projects.html">🚀 Projects</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>What I Love to Do</h2>
+      <ul>
+        <li>
+          <div class="hobby-icon"></div>
+          <strong>Coding & Development</strong>
+          <p>My passion for programming goes beyond academics. I enjoy solving complex algorithmic problems, exploring new frameworks, and building innovative web applications. Whether it's late-night debugging sessions or discovering elegant solutions to challenging problems, coding is where I find my creative flow.</p>
+        </li>
+        
+        <li>
+          <div class="hobby-icon"></div>
+          <strong>Football - Hala Madrid!</strong>
+          <p>Football is not just a sport for me; it's a way of life. As a devoted Madridista, I live and breathe Real Madrid. Whether I'm playing on the field, analyzing tactics, or cheering for Los Blancos during El Clásico, football teaches me teamwork, strategy, and the importance of never giving up.</p>
+        </li>
+        
+        <li>
+          <div class="hobby-icon"></div>
+          <strong>Gaming & FIFA</strong>
+          <p>During my leisure time, you'll find me immersed in FIFA, managing teams, and perfecting my gameplay. Gaming provides the perfect balance to my coding sessions - it's where I unwind, have fun, and sometimes even learn strategic thinking that applies to real-world problem-solving.</p>
+        </li>
+        
+        <li>
+          <div class="hobby-icon"></div>
+          <strong>Photography & Visual Arts</strong>
+          <p>Capturing moments through the lens has taught me to see beauty in everyday life. From street photography to editing and post-processing, this hobby has enhanced my eye for design and composition - skills that translate beautifully into web design and user interface development.</p>
+        </li>
+        
+        <li>
+          <div class="hobby-icon"></div>
+          <strong>Music & Soundscapes</strong>
+          <p>Music is my emotional compass. I explore various genres depending on my mood - from lo-fi beats while coding to energetic tracks during workouts. Music not only provides the perfect soundtrack to my life but also inspires creativity and helps me maintain focus during intensive study sessions.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Md. Akib - Crafted with passion and creativity</p>
+  </footer>
+</body>
+</html>

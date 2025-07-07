@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Akib - Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #2d3748;
+      overflow-x: hidden;
+    }
+
+   
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1;
+    }
+
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #fff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #4a5568;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    nav a:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    nav a:hover::before {
+      opacity: 1;
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      margin-top: -30px;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    section h2 {
+      color: #2d3748;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    section h3 {
+      color: #4a5568;
+      font-size: 1.5rem;
+      margin: 30px 0 15px 0;
+      font-weight: 600;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    section a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    section a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+    }
+
+    section a:hover::after {
+      width: 100%;
+    }
+
+    section a:hover {
+      color: #764ba2;
+    }
+
+    ul, ol {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li, ol li {
+      background: rgba(102, 126, 234, 0.1);
+      margin: 15px 0;
+      padding: 15px 20px;
+      border-radius: 15px;
+      border-left: 4px solid #667eea;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    ul li:hover, ol li:hover {
+      transform: translateX(10px);
+      background: rgba(102, 126, 234, 0.15);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+    }
+
+    ol li {
+      counter-increment: item;
+    }
+
+    ol li::before {
+      content: counter(item);
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 0.9rem;
+    }
+
+    ol {
+      counter-reset: item;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    table th {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 25px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      font-size: 1.1rem;
+    }
+
+    table td {
+      padding: 20px 25px;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    table tr:hover td {
+      background-color: rgba(102, 126, 234, 0.1);
+    }
+
+    table tr:nth-child(even) td {
+      background-color: rgba(248, 250, 252, 0.8);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #2d3748, #1a202c);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+   
+
+    footer p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #4a5568;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      border-left: 5px solid #667eea;
+      padding: 30px 35px;
+      margin: 25px 0;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    blockquote::before {
+      content: '"';
+      font-size: 6rem;
+      color: #667eea;
+      position: absolute;
+      top: -20px;
+      left: 25px;
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
+      
+      nav a {
+        margin: 5px;
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+      
+      main {
+        padding: 30px 15px;
+      }
+      
+      section {
+        padding: 25px;
+        margin-bottom: 40px;
+      }
+      
+      section h2 {
+        font-size: 2rem;
+      }
+      
+      table th,
+      table td {
+        padding: 15px;
+        font-size: 1rem;
+      }
+    }
+
+    
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    }
+
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    
+    .skill-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    
+    .contact-info {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      padding: 20px;
+      border-radius: 15px;
+      margin: 15px 0;
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Md Akib</h1>
+    <p class="subtitle">Computer Science Student & Aspiring Developer</p>
+    <div style="width: 200px; height: 200px; border-radius: 50%; margin: 20px auto; background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; border: 5px solid rgba(255, 255, 255, 0.3); box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);">
+      <span style="font-size: 4rem; color: white; font-weight: bold;">MA</span>
+
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#links">Links</a>
+    <a href="#movies">Movies</a>
+    <a href="#table">Schedule</a>
+    <a href="#quote">Quote</a>
+    <a href="#footer">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi there! 👋 I'm a passionate Computer Science student at <a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a>, deeply immersed in the world of technology and innovation. My journey combines academic excellence with practical application, as I constantly explore new programming languages, frameworks, and development methodologies.</p>
+      <p>When I'm not coding, you'll find me on the football field, where I channel my competitive spirit and teamwork skills. I believe that the discipline and strategy required in sports translate beautifully into software development – both require patience, practice, and the ability to work effectively with others.</p>
+      <p>I'm always eager to learn new technologies, contribute to open-source projects, and connect with fellow developers who share my passion for creating innovative solutions.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <h3>Programming Languages</h3>
+      <div style="margin: 20px 0;">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+      
+      <h3>Web Technologies</h3>
+      <div style="margin: 20px 0;">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Responsive Design</span>
+      </div>
+      
+      <h3>Interests & Hobbies</h3>
+      <div style="margin: 20px 0;">
+        <span class="skill-tag">⚽ Football</span>
+        <span class="skill-tag">🎮 Gaming</span>
+        <span class="skill-tag">📚 Learning</span>
+        <span class="skill-tag">🚀 Innovation</span>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>Connect & Explore</h2>
+      <p>I'm actively engaged in the developer community and love sharing knowledge with fellow students and professionals. You can find me collaborating on projects, participating in discussions, and contributing to various platforms.</p>
+      
+      <div style="margin: 25px 0;">
+        <h3>🌐 Online Presence</h3>
+        <ul>
+          <li><a href="https://discord.gg/dF6QhkBg" target="_blank">💬 Join our CSE 391 Discord Community</a> - Active discussions and collaboration</li>
+          <li><a href="https://github.com/Akib-17" target="_blank">🐙 GitHub Profile</a> - Check out my repositories and contributions</li>
+        </ul>
+      </div>
+      
+      <div style="margin: 25px 0;">
+        <h3>📁 Portfolio Sections</h3>
+        <ul>
+          <li><a href="hobbies.html">🎯 My Hobbies & Interests</a> - Discover what I do outside of coding</li>
+          <li><a href="projects.html">🚀 Featured Projects</a> - Explore my latest work and experiments</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="movies">
+      <h2>Top 5 Must-Watch Movies</h2>
+      <p>Here are my all-time favorite films that have inspired me both personally and professionally:</p>
+      <ol>
+        <li><strong>Interstellar</strong> - A mind-bending journey through space and time that showcases the power of human ingenuity</li>
+        <li><strong>Predestination</strong> - A complex sci-fi thriller that challenges your perception of reality</li>
+        <li><strong>The Bee Movie</strong> - A delightful animated film with surprising depth and humor</li>
+        <li><strong>The Shawshank Redemption</strong> - A timeless tale of hope, friendship, and perseverance</li>
+        <li><strong>Don't Breathe</strong> - A gripping thriller that keeps you on the edge of your seat</li>
+      </ol>
+    </section>
+
+    <section id="table">
+      <h2>My Weekly Schedule</h2>
+      <p>Here's how I organize my week to balance academics, coding practice, and personal interests:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Activities & Focus Areas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monday</strong></td>
+            <td rowspan="2">🔬 CSE Laboratory Sessions<br>📖 Self-directed Learning<br>⚽ Football Practice</td>
+          </tr>
+          <tr>
+            <td><strong>Tuesday</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Wednesday</strong></td>
+            <td>🎓 University Classes<br>💻 Algorithm & Data Structure Practice</td>
+          </tr>
+          <tr>
+            <td><strong>Thursday</strong></td>
+            <td>👥 Collaborative Group Projects<br>🌐 Web Development Practice<br>🔧 Open Source Contributions</td>
+          </tr>
+          <tr>
+            <td><strong>Friday</strong></td>
+            <td>📚 Academic Studies<br>🎯 Personal Project Development</td>
+          </tr>
+          <tr>
+            <td><strong>Weekend</strong></td>
+            <td>🎮 Recreation & Hobbies<br>📖 Tech Articles & Documentation<br>⚽ Football Matches</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="quote">
+      <h2>Philosophy & Inspiration</h2>
+      <blockquote>
+        "Code is like humor—if you have to explain it, it's probably not good."
+        <br><br>
+        <em>— Cory House</em>
+      </blockquote>
+      <p>This quote perfectly captures my approach to programming. I believe in writing clean, intuitive code that speaks for itself. Just like the best jokes don't need explanation, the best code is self-documenting and elegant in its simplicity.</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="contact-info">
+      <h3 style="color: white; margin-bottom: 20px;">Let's Connect!</h3>
+      <p><strong>📧 Email:</strong> Available upon request</p>
+      <p><strong>📱 Social:</strong> Find me on GitHub and Discord</p>
+      <p><strong>🎓 University:</strong> BRAC University, CSE Department</p>
+    </div>
+    <p>&copy; 2025 Md Akib - All rights reserved</p>
+    <p id="location-date"></p>
+  </footer>
+
+  <script>
+    
+    const date = new Date(document.lastModified);
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit'
+    };
+    
+    document.getElementById("location-date").innerHTML = 
+      `📍 <strong>Location:</strong> Dhaka, Bangladesh | 🕒 <strong>Last Updated:</strong> ${date.toLocaleDateString('en-US', options)}`;
+
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+
+    
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', { 
+        timeZone: 'Asia/Dhaka',
+        hour12: true 
+      });
+      
+      
+      const timeElement = document.getElementById('current-time');
+      if (timeElement) {
+        timeElement.textContent = `Current Time in Dhaka: ${timeString}`;
+      }
+    }
+
+    
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
